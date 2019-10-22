@@ -1,0 +1,123 @@
+﻿@model Ignis.Models.VehicleEquipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Vehicle Equipment</h2>
+<h4>Basic Details</h4>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleEquipmentType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleEquipmentType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateofPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateofPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+    </dl>
+</div>
+<hr/>
+<h4>Photos</h4>
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content(Ignis.Util.Constants.VEHICLE_EQUIPMENTS_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                        <img src="@Url.Content(Ignis.Util.Constants.VEHICLE_EQUIPMENTS_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+<hr/>
+<h4>Damages</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleEquipmentDamages.First().DateNoticed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleEquipmentDamages.First().Report)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleEquipmentDamages.First().CostEstimate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleEquipmentDamages.First().VehicleEquipmentDamageType.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.VehicleEquipmentDamages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateNoticed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostEstimate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleEquipmentDamageType.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket", new { id = item.VehicleEquipmentDamageStatues.OrderBy(x => x.DateOfArrival).First().Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

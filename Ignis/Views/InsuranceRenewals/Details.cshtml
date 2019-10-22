@@ -1,0 +1,46 @@
+﻿@model Ignis.Models.InsuranceRenewal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InsuranceRenewal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+    </dl>
+</div>

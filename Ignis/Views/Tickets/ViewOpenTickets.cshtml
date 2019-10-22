@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ignis.Models.DamageStatus>
+
+@{
+    ViewBag.Title = "ViewClosedTickets";
+}
+
+<h2>View Open Tickets</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfArrival)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Official)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Action)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if ((item.Action == Ignis.Models.DamageAction.Open || item.Action == Ignis.Models.DamageAction.Approve) && (Model.Where(x => x.CaseId == item.CaseId && x.Action == Ignis.Models.DamageAction.Closed).Count() == 0))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfArrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Official)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Action)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+

@@ -1,0 +1,67 @@
+﻿@model Ignis.Models.ResidentialQuarter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Residential Quarter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<h4>Houses <small>@Html.ActionLink("Add", "Create", "Houses", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Houses.First().Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Houses.First().NumberOfBedrooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Houses.First().OccupantDesignation)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Houses)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfBedrooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OccupantDesignation)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Houses", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

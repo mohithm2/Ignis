@@ -1,0 +1,128 @@
+﻿@model Ignis.Models.FireStation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FireStation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hobli.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hobli.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionedStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionedStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

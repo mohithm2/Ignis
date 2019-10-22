@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Ignis.Models.VehicleDamageStatus>
+
+@{
+    ViewBag.Title = "ViewClosedTickets";
+}
+
+<h2>View Closed Tickets</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleDamage.Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Action)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Action == Ignis.Models.DamageAction.Closed || item.Action == Ignis.Models.DamageAction.Disapprove)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleDamage.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Action)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewClosedTicket", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

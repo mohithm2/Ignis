@@ -1,0 +1,58 @@
+﻿@model Ignis.Models.BatteryChange
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BatteryChange</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OdometerReading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OdometerReading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoadRunKilometer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoadRunKilometer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PumpRunKilometer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PumpRunKilometer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfChange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfChange)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

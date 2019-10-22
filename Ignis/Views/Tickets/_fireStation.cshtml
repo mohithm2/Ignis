@@ -1,0 +1,130 @@
+﻿@model Ignis.Models.FireStation
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hobli.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hobli.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionedStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionedStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    @if (TempData.Keys.Contains("FireExtinguishingEquipmentImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["FireExtinguishingEquipmentImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(Ignis.Util.Constants.FIRE_STATION_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(Ignis.Util.Constants.FIRE_STATION_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

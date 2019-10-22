@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Ignis.Models.VehicleDamage>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateNoticed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostEstimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OdometerReading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleDamageType.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateNoticed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Report)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostEstimate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OdometerReading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleDamageType.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "ViewTicket", new { id=item.VehicleDamageStatuses.OrderBy(x => x.DateOfArrival).First().Id })
+        </td>
+    </tr>
+}
+
+</table>

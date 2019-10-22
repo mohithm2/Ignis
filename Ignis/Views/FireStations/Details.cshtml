@@ -1,0 +1,426 @@
+﻿@model Ignis.Models.FireStation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Fire Station</h2>
+<h4>Basic Details</h4>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hobli.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hobli.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionedStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionedStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<h4>Photos</h4>
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content(Ignis.Util.Constants.FIRE_STATION_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                        <img src="@Url.Content(Ignis.Util.Constants.FIRE_STATION_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+<hr />
+<h4>Damages</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.FireStationDamages.First().DateNoticed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.FireStationDamages.First().Report)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.FireStationDamages.First().CostEstimate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.FireStationDamages.First().FireStationDamageType.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.FireStationDamages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateNoticed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostEstimate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FireStationDamageType.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket", "Tickets", new { id = item.FireStationDamageStatues.OrderByDescending(x => x.DateOfArrival).First().Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr/>
+<h4>Water Sources <small>@Html.ActionLink("Add", "Create", "WaterSources", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.WaterSources.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.WaterSources.First().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.WaterSources.First().IsOwned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.WaterSources.First().Capacity)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.WaterSources)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsOwned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "WaterSources", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Land Owned <small>@Html.ActionLink("Add", "Create", "Lands", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Lands.First().Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.Lands.First().IsEncroached)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Lands)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsEncroached)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Lands", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<hr />
+<h4>Lands Required <small>@Html.ActionLink("Add", "Create", "RequiredLands", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.RequiredLands.First().Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.RequiredLands.First().Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.RequiredLands.First().PotentialCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.RequiredLands.First().AreaRequired)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.RequiredLands)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PotentialCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AreaRequired)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "RequiredLands", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Break Rooms <small>@Html.ActionLink("Add", "Create", "BreakRooms", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.BreakRooms.First().Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.BreakRooms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "BreakRooms", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<hr />
+<h4>Class Rooms <small>@Html.ActionLink("Add", "Create", "ClassRooms", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.ClassRooms.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.ClassRooms.First().Capacity)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.ClassRooms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "ClassRooms", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Offices <small>@Html.ActionLink("Add", "Create", "Offices", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.Offices.First().Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Offices)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Offices", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Residential Quarters <small>@Html.ActionLink("Add", "Create", "ResidentialQuarters", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.ResidentialQuarters.First().Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.ResidentialQuarters)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "ResidentialQuarters", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Telephone Room <small>@Html.ActionLink("Add", "Create", "TelephoneRooms", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.TelephoneRooms.First().Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.TelephoneRooms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "TelephoneRooms", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

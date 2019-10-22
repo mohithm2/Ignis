@@ -1,0 +1,63 @@
+﻿@model Ignis.Models.DamageStatus
+
+@{
+    ViewBag.Title = "ActOnDamage";
+}
+
+<h2>Act On Damage</h2>
+
+<h4>Vehicle Damage</h4>
+@{Html.RenderAction("ViewVehicleDamage", new { id = Model.CaseId });}
+<hr />
+
+<div class="row">
+    <h4>File Movement</h4>
+    @{Html.RenderAction("ViewFileMovement", new { id = Model.CaseId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Vehicle Details</h4>
+    @{Html.RenderAction("ViewVehicle", new { id = Model.CaseId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Vehicle Damage History</h4>
+    @{Html.RenderAction("ViewPreviousDamages", new { id = Model.CaseId });}
+</div>
+
+
+<div class="row">
+    <h4>Take Action</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.DateOfArrival)
+        @Html.HiddenFor(model => model.Official)
+        @Html.HiddenFor(model => model.CaseId)
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Action, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Action, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Action, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Take Action" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

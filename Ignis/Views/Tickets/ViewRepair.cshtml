@@ -1,0 +1,60 @@
+﻿@model Ignis.Models.Repair
+<h4>Repair</h4>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyContact)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    @if (TempData.Keys.Contains("DamageImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["DamageImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(TempData.Peek("basePath") + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(TempData.Peek("basePath") + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+

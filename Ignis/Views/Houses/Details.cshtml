@@ -1,0 +1,116 @@
+﻿@model Ignis.Models.House
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>House</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidentialQuarter.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResidentialQuarter.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OccupantDesignation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OccupantDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content(Ignis.Util.Constants.HOUSE_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                        <img src="@Url.Content(Ignis.Util.Constants.HOUSE_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+<hr />
+<h4>Damages</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.HouseDamages.First().DateNoticed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.HouseDamages.First().Report)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.HouseDamages.First().CostEstimate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.HouseDamages.First().HouseDamageType.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.HouseDamages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateNoticed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostEstimate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HouseDamageType.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket", "Tickets", new { id = item.HouseDamageStatues.OrderByDescending(x => x.DateOfArrival).First().Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

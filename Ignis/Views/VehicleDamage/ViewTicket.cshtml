@@ -1,0 +1,29 @@
+﻿@model Ignis.Models.VehicleDamageStatus
+@{
+    ViewBag.Title = "ViewTicket";
+}
+
+<h2>ViewTicket</h2>
+
+<div>
+    <h4>Vehicle Damage</h4>
+    @{Html.RenderAction("ViewVehicleDamage", new { id = Model.VehicleDamage.Id });}
+    <hr />
+</div>
+
+<div class="row">
+    <h4>File Movement</h4>
+    @{Html.RenderAction("ViewFileMovement", new { id = Model.CaseId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Vehicle Details</h4>
+    @{Html.RenderAction("ViewVehicle", new { id = Model.VehicleDamage.VehicleId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Vehicle Damage History</h4>
+    @{Html.RenderAction("ViewPreviousDamages", new { vehicleId = Model.VehicleDamage.VehicleId, vehicleDamageTypeId = Model.VehicleDamage.VehicleDamageTypeId });}
+</div>

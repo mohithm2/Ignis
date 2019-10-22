@@ -1,0 +1,407 @@
+﻿@model Ignis.Models.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Vehicle</h2>
+<h4>Basic Details</h4>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EngineNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacityFuelTank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacityFuelTank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionOrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionOrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TheoreticalMileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheoreticalMileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KilometersCovered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KilometersCovered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacityOfAttachement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacityOfAttachement)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<h4>Photos</h4>
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content("~/Content/Uploads/Vehicles/" + image.FilePath)" target="_blank">
+                        <img src="@Url.Content("~/Content/Uploads/Vehicles/" + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+<hr />
+<h4>Insurance Renewals <small>@Html.ActionLink("Add", "Create", "InsuranceRenewals", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.InsuranceRenewals.First().DateOfPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.InsuranceRenewals.First().AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.InsuranceRenewals.First().ExpiryDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.InsuranceRenewals)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "InsuranceRenewals", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr/>
+<h4>Oil Changes <small>@Html.ActionLink("Add", "Create", "OilChanges", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.OilChanges.First().OilType.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.OilChanges.First().Vehicle.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.OilChanges.First().DateOfChange)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.OilChanges)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OilType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vehicle.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfChange)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "OilChanges", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr/>
+<h4>Tax Payments <small>@Html.ActionLink("Add", "Create", "TaxPayments", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.TaxPayments.First().PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.TaxPayments.First().AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.TaxPayments.First().ExpiryDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.TaxPayments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "TaxPayments", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Tyre Changes <small>@Html.ActionLink("Add", "Create", "TyreChanges", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.TyreChanges.First().DateOfChange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.TyreChanges.First().OdometerReading)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.TyreChanges)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfChange)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdometerReading)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "TyreChanges", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Fittness Certificates <small>@Html.ActionLink("Add", "Create", "FittnessCertificates", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.FittnessCertificates.First().IssueDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.FittnessCertificates)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "FittnessCertificates", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Battery Changes <small>@Html.ActionLink("Add", "Create", "BatteryChanges", new { id = Model.Id }, new { @class = "btn bnt-default" })</small></h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.BatteryChanges.First().OdometerReading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.BatteryChanges.First().DateOfChange)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.BatteryChanges)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdometerReading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfChange)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "BatteryChanges", new { id = item.Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<h4>Damages</h4>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleDamages.First().DateNoticed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleDamages.First().Report)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleDamages.First().CostEstimate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleDamages.First().OdometerReading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.VehicleDamages.First().VehicleDamageType.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.VehicleDamages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateNoticed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostEstimate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdometerReading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleDamageType.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket","Tickets",  new { id = item.VehicleDamageStatuses.OrderBy(x => x.DateOfArrival).First().Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Ignis.Models.VehicleDamage>
+
+@{
+    ViewBag.Title = "ViewDamage";
+}
+
+<h2>ViewDamage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleDamageType.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleRepair.BillTIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateNoticed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OdometerReading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostEstimate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleDamageType.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleRepair.BillTIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateNoticed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OdometerReading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Report)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostEstimate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

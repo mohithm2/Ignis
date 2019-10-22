@@ -1,0 +1,44 @@
+﻿@model Ignis.Models.DamageStatus
+@{
+    ViewBag.Title = "ViewTicket";
+}
+
+<h2>Ticket</h2>
+
+<div>
+    <h4>Damage</h4>
+    @{Html.RenderAction("ViewDamage", new { id = Model.CaseId });}
+    <hr />
+</div>
+
+<div class="row">
+    <h4>File Movement</h4>
+    @{Html.RenderAction("ViewFileMovement", new { id = Model.CaseId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Item Details</h4>
+    @{Html.RenderAction("ViewItem", "Tickets",new { id = Model.CaseId });}
+</div>
+<hr />
+
+<div class="row">
+    <h4>Damage History</h4>
+    @{Html.RenderAction("ViewPreviousDamages", new { id = Model.CaseId });}
+</div>
+
+<div class="row">
+    @{Html.RenderAction("DisplayFormForApproveDisapproveElevateTicket", new { id = Model.Id });}
+</div>
+
+<div class="row">
+    @{Html.RenderAction("DisplayFormForCloseTicket", new { id = Model.Id });}
+</div>
+
+@if (Model.Action == Ignis.Models.DamageAction.Closed)
+{
+    <div class="row">
+        @{Html.RenderAction("ViewRepair", new { id = Model.CaseId });}
+    </div>
+}

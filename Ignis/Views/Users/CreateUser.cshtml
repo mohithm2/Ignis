@@ -1,0 +1,99 @@
+﻿@model Ignis.Models.CreateUserViewModel
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>Create User</h2>
+
+
+@using (Html.BeginForm("CreateUser", "Users"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>CreateUserViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UserType)
+
+        @switch (Model.UserType)
+        {
+            case "admin":
+                break;
+            case "cfo":
+                <div class="form-group">
+                    @Html.Label("Fire Station", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("InfrastructureId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InfrastructureId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                break;
+            case "dfo":
+                <div class="form-group">
+                    @Html.Label("District", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("InfrastructureId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InfrastructureId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                break;
+            case "rfo":
+                <div class="form-group">
+                    @Html.Label("Range", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("InfrastructureId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InfrastructureId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                break;
+            case "zfo":
+                <div class="form-group">
+                    @Html.Label("Zone", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("InfrastructureId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InfrastructureId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                break;
+            case "ig":
+                break;
+        }
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

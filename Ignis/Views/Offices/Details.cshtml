@@ -1,0 +1,92 @@
+﻿@model Ignis.Models.Office
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Office</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<h4>Photos</h4>
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content(Ignis.Util.Constants.OFFICE_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                        <img src="@Url.Content(Ignis.Util.Constants.OFFICE_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+<hr/>
+<h4>Damages</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => Model.OfficeDamages.First().DateNoticed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.OfficeDamages.First().Report)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.OfficeDamages.First().CostEstimate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.OfficeDamages.First().OfficeDamageType.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.OfficeDamages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateNoticed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostEstimate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfficeDamageType.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "ViewTicket", "Tickets", new { id = item.OfficeDamageStatues.OrderByDescending(x => x.DateOfArrival).First().Id }, new { })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

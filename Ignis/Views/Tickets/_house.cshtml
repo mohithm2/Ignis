@@ -1,0 +1,66 @@
+﻿@model Ignis.Models.House
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidentialQuarter.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResidentialQuarter.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OccupantDesignation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OccupantDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    @if (TempData.Keys.Contains("FireExtinguishingEquipmentImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["FireExtinguishingEquipmentImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(Ignis.Util.Constants.HOUSE_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(Ignis.Util.Constants.HOUSE_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

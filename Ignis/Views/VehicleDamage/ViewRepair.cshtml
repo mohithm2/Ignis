@@ -1,0 +1,68 @@
+﻿@model Ignis.Models.VehicleRepair
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleDamage.Report)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleDamage.Report)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyContact)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    <h4>Repair</h4>
+    @if (TempData.Keys.Contains("RapairImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["RapairImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(Ignis.Util.Constants.VEHICLE_REPAIR_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(Ignis.Util.Constants.VEHICLE_REPAIR_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+

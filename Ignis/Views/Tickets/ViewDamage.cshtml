@@ -1,0 +1,51 @@
+﻿@model Ignis.Models.Damage
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Report)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Report)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateNoticed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateNoticed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostEstimate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostEstimate)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    @if (TempData.Keys.Contains("DamageImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["DamageImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(TempData.Peek("basePath") + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(TempData.Peek("basePath") + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+

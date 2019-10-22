@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "DfoHome";
+}
+
+<div class="jumbotron">
+    <h1>Welcome, @User.Identity.Name</h1>
+    <p class="lead">Dashboard for @(TempData.Peek("DistrictName"))</p>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetNumberOfFireStation", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Fire Station</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetNumberOfVehicles", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Vehicles</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetNumberOfVehicleEquipment", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Vehicle Equipment</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetNumberOfFireExtinguishingEquipment", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Fire Extinguishing Equipment</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetOpenTickets", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Open Tickets</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="thumbnail text-center">
+            <h1>@{Html.RenderAction("GetNotifications", "Dashboard");}</h1>
+            <div class="caption">
+                <h4>Notifications</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        @Html.ActionLink("Vehicles", "Index", "Vehicles", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-3">
+        @Html.ActionLink("Vehicle Equipment", "Index", "VehicleEquipments", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-3">
+        @Html.ActionLink("Fire Extinguishing Equipment", "Index", "FireExtinguishingEquipments", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-3">
+        @Html.ActionLink("Fire Station", "Index", "FireStations", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>

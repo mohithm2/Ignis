@@ -1,0 +1,187 @@
+﻿@model Ignis.Models.Vehicle
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EngineNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacityFuelTank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacityFuelTank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionOrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionOrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanctionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanctionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TheoreticalMileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheoreticalMileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KilometersCovered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KilometersCovered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacityOfAttachement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacityOfAttachement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoNorth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoNorth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoEast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoEast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoWest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoWest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoSouth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoSouth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStationId)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="row">
+    @if (TempData.Keys.Contains("VehicleImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["VehicleImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content("~/Content/Uploads/Vehicles/" + image.FilePath)" target="_blank">
+                            <img src="@Url.Content("~/Content/Uploads/Vehicles/" + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

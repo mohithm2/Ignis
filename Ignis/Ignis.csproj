@@ -1,0 +1,1214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E531A79-44BA-4337-9744-310E020BCD25}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ignis</RootNamespace>
+    <AssemblyName>Ignis</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.11.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.11.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BatteryChangesController.cs" />
+    <Compile Include="Controllers\BreakRoomsController.cs" />
+    <Compile Include="Controllers\BuildingDamageTypesController.cs" />
+    <Compile Include="Controllers\ClassRoomsController.cs" />
+    <Compile Include="Controllers\CountsController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DistrictsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\FireExtinguishingEquipmentDamageTypesController.cs" />
+    <Compile Include="Controllers\FireExtinguishingEquipmentsController.cs" />
+    <Compile Include="Controllers\FireExtinguishingEquipmentTypesController.cs" />
+    <Compile Include="Controllers\FireStationsController.cs" />
+    <Compile Include="Controllers\FittnessCertificatesController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
+    <Compile Include="Controllers\HoblisController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HousesController.cs" />
+    <Compile Include="Controllers\InsuranceRenewalsController.cs" />
+    <Compile Include="Controllers\LandsController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\OilChangesController.cs" />
+    <Compile Include="Controllers\OilTypesController.cs" />
+    <Compile Include="Controllers\RangeDistrictsController.cs" />
+    <Compile Include="Controllers\RangesController.cs" />
+    <Compile Include="Controllers\RanksController.cs" />
+    <Compile Include="Controllers\RequiredLandsController.cs" />
+    <Compile Include="Controllers\ResidentialQuartersController.cs" />
+    <Compile Include="Controllers\TaluksController.cs" />
+    <Compile Include="Controllers\TaxPaymentsController.cs" />
+    <Compile Include="Controllers\TelephoneRoomsController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Controllers\TyreChangesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\VacanciesController.cs" />
+    <Compile Include="Controllers\VehicleDamageController.cs" />
+    <Compile Include="Controllers\VehicleDamageTypesController.cs" />
+    <Compile Include="Controllers\VehicleEquipmentDamageTypesController.cs" />
+    <Compile Include="Controllers\VehicleEquipmentsController.cs" />
+    <Compile Include="Controllers\VehicleEquipmentTypesController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
+    <Compile Include="Controllers\WaterSourcesController.cs" />
+    <Compile Include="Controllers\WorksForsController.cs" />
+    <Compile Include="Controllers\ZoneRangesController.cs" />
+    <Compile Include="Controllers\ZonesController.cs" />
+    <Compile Include="DAL\IgnisModel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201215027_AddedZoneRange.cs" />
+    <Compile Include="Migrations\201708201215027_AddedZoneRange.Designer.cs">
+      <DependentUpon>201708201215027_AddedZoneRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201223293_AddedDistrict.cs" />
+    <Compile Include="Migrations\201708201223293_AddedDistrict.Designer.cs">
+      <DependentUpon>201708201223293_AddedDistrict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201229484_AddedTaluk.cs" />
+    <Compile Include="Migrations\201708201229484_AddedTaluk.Designer.cs">
+      <DependentUpon>201708201229484_AddedTaluk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201233265_AddedHobli.cs" />
+    <Compile Include="Migrations\201708201233265_AddedHobli.Designer.cs">
+      <DependentUpon>201708201233265_AddedHobli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201247188_AddedFireStation.cs" />
+    <Compile Include="Migrations\201708201247188_AddedFireStation.Designer.cs">
+      <DependentUpon>201708201247188_AddedFireStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201253222_AddedFireStation1.cs" />
+    <Compile Include="Migrations\201708201253222_AddedFireStation1.Designer.cs">
+      <DependentUpon>201708201253222_AddedFireStation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201301475_AddedFireStation2.cs" />
+    <Compile Include="Migrations\201708201301475_AddedFireStation2.Designer.cs">
+      <DependentUpon>201708201301475_AddedFireStation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201311525_AddedFireStation3.cs" />
+    <Compile Include="Migrations\201708201311525_AddedFireStation3.Designer.cs">
+      <DependentUpon>201708201311525_AddedFireStation3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201318298_AddedFireStation4.cs" />
+    <Compile Include="Migrations\201708201318298_AddedFireStation4.Designer.cs">
+      <DependentUpon>201708201318298_AddedFireStation4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201327294_AddedVehicle.cs" />
+    <Compile Include="Migrations\201708201327294_AddedVehicle.Designer.cs">
+      <DependentUpon>201708201327294_AddedVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201334152_AddedTyreChange.cs" />
+    <Compile Include="Migrations\201708201334152_AddedTyreChange.Designer.cs">
+      <DependentUpon>201708201334152_AddedTyreChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201338038_AddedBatteryChange.cs" />
+    <Compile Include="Migrations\201708201338038_AddedBatteryChange.Designer.cs">
+      <DependentUpon>201708201338038_AddedBatteryChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201340119_AddedMissingProperties.cs" />
+    <Compile Include="Migrations\201708201340119_AddedMissingProperties.Designer.cs">
+      <DependentUpon>201708201340119_AddedMissingProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201351010_AddedOilChanges.cs" />
+    <Compile Include="Migrations\201708201351010_AddedOilChanges.Designer.cs">
+      <DependentUpon>201708201351010_AddedOilChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201355377_AddedOilChanges1.cs" />
+    <Compile Include="Migrations\201708201355377_AddedOilChanges1.Designer.cs">
+      <DependentUpon>201708201355377_AddedOilChanges1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201357118_AddedOilChanges11.cs" />
+    <Compile Include="Migrations\201708201357118_AddedOilChanges11.Designer.cs">
+      <DependentUpon>201708201357118_AddedOilChanges11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201359315_Juggad.cs" />
+    <Compile Include="Migrations\201708201359315_Juggad.Designer.cs">
+      <DependentUpon>201708201359315_Juggad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201402538_AddedOilChanges2.cs" />
+    <Compile Include="Migrations\201708201402538_AddedOilChanges2.Designer.cs">
+      <DependentUpon>201708201402538_AddedOilChanges2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201406542_AddedInsuranceRenewals.cs" />
+    <Compile Include="Migrations\201708201406542_AddedInsuranceRenewals.Designer.cs">
+      <DependentUpon>201708201406542_AddedInsuranceRenewals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201411578_AddedTaxPayment.cs" />
+    <Compile Include="Migrations\201708201411578_AddedTaxPayment.Designer.cs">
+      <DependentUpon>201708201411578_AddedTaxPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201415299_AddedFC.cs" />
+    <Compile Include="Migrations\201708201415299_AddedFC.Designer.cs">
+      <DependentUpon>201708201415299_AddedFC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201424330_AddedVehicleEquipment.cs" />
+    <Compile Include="Migrations\201708201424330_AddedVehicleEquipment.Designer.cs">
+      <DependentUpon>201708201424330_AddedVehicleEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201432319_AddedFireExtinguishingEquipment.cs" />
+    <Compile Include="Migrations\201708201432319_AddedFireExtinguishingEquipment.Designer.cs">
+      <DependentUpon>201708201432319_AddedFireExtinguishingEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201452310_AddedOffice.cs" />
+    <Compile Include="Migrations\201708201452310_AddedOffice.Designer.cs">
+      <DependentUpon>201708201452310_AddedOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201455284_AddedBreakRoom.cs" />
+    <Compile Include="Migrations\201708201455284_AddedBreakRoom.Designer.cs">
+      <DependentUpon>201708201455284_AddedBreakRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201458402_AddedClassRom.cs" />
+    <Compile Include="Migrations\201708201458402_AddedClassRom.Designer.cs">
+      <DependentUpon>201708201458402_AddedClassRom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201501122_AddedTelephoneRoom.cs" />
+    <Compile Include="Migrations\201708201501122_AddedTelephoneRoom.Designer.cs">
+      <DependentUpon>201708201501122_AddedTelephoneRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201504116_AddedResidentialQuarter.cs" />
+    <Compile Include="Migrations\201708201504116_AddedResidentialQuarter.Designer.cs">
+      <DependentUpon>201708201504116_AddedResidentialQuarter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201508458_AddedHouse.cs" />
+    <Compile Include="Migrations\201708201508458_AddedHouse.Designer.cs">
+      <DependentUpon>201708201508458_AddedHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201529347_AddedGroups.cs" />
+    <Compile Include="Migrations\201708201529347_AddedGroups.Designer.cs">
+      <DependentUpon>201708201529347_AddedGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201533040_AddedRanks.cs" />
+    <Compile Include="Migrations\201708201533040_AddedRanks.Designer.cs">
+      <DependentUpon>201708201533040_AddedRanks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201537238_AddedEmployee.cs" />
+    <Compile Include="Migrations\201708201537238_AddedEmployee.Designer.cs">
+      <DependentUpon>201708201537238_AddedEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201538467_AddedEmployee1.cs" />
+    <Compile Include="Migrations\201708201538467_AddedEmployee1.Designer.cs">
+      <DependentUpon>201708201538467_AddedEmployee1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201543370_AddedWorksFors.cs" />
+    <Compile Include="Migrations\201708201543370_AddedWorksFors.Designer.cs">
+      <DependentUpon>201708201543370_AddedWorksFors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201548239_AddedVancancies.cs" />
+    <Compile Include="Migrations\201708201548239_AddedVancancies.Designer.cs">
+      <DependentUpon>201708201548239_AddedVancancies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201552340_AddedCount.cs" />
+    <Compile Include="Migrations\201708201552340_AddedCount.Designer.cs">
+      <DependentUpon>201708201552340_AddedCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708210337142_AddedUsers.cs" />
+    <Compile Include="Migrations\201708210337142_AddedUsers.Designer.cs">
+      <DependentUpon>201708210337142_AddedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708210554439_DbUpdate.cs" />
+    <Compile Include="Migrations\201708210554439_DbUpdate.Designer.cs">
+      <DependentUpon>201708210554439_DbUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708210906017_AddedImageToVehicle.cs" />
+    <Compile Include="Migrations\201708210906017_AddedImageToVehicle.Designer.cs">
+      <DependentUpon>201708210906017_AddedImageToVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211134007_AddedLand.cs" />
+    <Compile Include="Migrations\201708211134007_AddedLand.Designer.cs">
+      <DependentUpon>201708211134007_AddedLand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211146041_AddedRequiredLand.cs" />
+    <Compile Include="Migrations\201708211146041_AddedRequiredLand.Designer.cs">
+      <DependentUpon>201708211146041_AddedRequiredLand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211204161_AddedVehicleDamage.cs" />
+    <Compile Include="Migrations\201708211204161_AddedVehicleDamage.Designer.cs">
+      <DependentUpon>201708211204161_AddedVehicleDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211212590_AddedVehicleDamageStatus.cs" />
+    <Compile Include="Migrations\201708211212590_AddedVehicleDamageStatus.Designer.cs">
+      <DependentUpon>201708211212590_AddedVehicleDamageStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211254448_MadeDateTimeNullable.cs" />
+    <Compile Include="Migrations\201708211254448_MadeDateTimeNullable.Designer.cs">
+      <DependentUpon>201708211254448_MadeDateTimeNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211349485_AddedCaseId.cs" />
+    <Compile Include="Migrations\201708211349485_AddedCaseId.Designer.cs">
+      <DependentUpon>201708211349485_AddedCaseId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211446164_AddedVehicleReapir.cs" />
+    <Compile Include="Migrations\201708211446164_AddedVehicleReapir.Designer.cs">
+      <DependentUpon>201708211446164_AddedVehicleReapir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220317087_AddedSTI.cs" />
+    <Compile Include="Migrations\201708220317087_AddedSTI.Designer.cs">
+      <DependentUpon>201708220317087_AddedSTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220354309_AddedMoreSTI.cs" />
+    <Compile Include="Migrations\201708220354309_AddedMoreSTI.Designer.cs">
+      <DependentUpon>201708220354309_AddedMoreSTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220737353_AddedFK.cs" />
+    <Compile Include="Migrations\201708220737353_AddedFK.Designer.cs">
+      <DependentUpon>201708220737353_AddedFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220919453_EvenMoreSTI.cs" />
+    <Compile Include="Migrations\201708220919453_EvenMoreSTI.Designer.cs">
+      <DependentUpon>201708220919453_EvenMoreSTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220939107_AddedMissingFields.cs" />
+    <Compile Include="Migrations\201708220939107_AddedMissingFields.Designer.cs">
+      <DependentUpon>201708220939107_AddedMissingFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220940598_RemovedUnnecessaryFields.cs" />
+    <Compile Include="Migrations\201708220940598_RemovedUnnecessaryFields.Designer.cs">
+      <DependentUpon>201708220940598_RemovedUnnecessaryFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221107403_AddedFK1.cs" />
+    <Compile Include="Migrations\201708221107403_AddedFK1.Designer.cs">
+      <DependentUpon>201708221107403_AddedFK1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221137405_AddedMoreSTL.cs" />
+    <Compile Include="Migrations\201708221137405_AddedMoreSTL.Designer.cs">
+      <DependentUpon>201708221137405_AddedMoreSTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221228313_STLSTL.cs" />
+    <Compile Include="Migrations\201708221228313_STLSTL.Designer.cs">
+      <DependentUpon>201708221228313_STLSTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221249468_MovedProperties.cs" />
+    <Compile Include="Migrations\201708221249468_MovedProperties.Designer.cs">
+      <DependentUpon>201708221249468_MovedProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221356174_AddedAttributes.cs" />
+    <Compile Include="Migrations\201708221356174_AddedAttributes.Designer.cs">
+      <DependentUpon>201708221356174_AddedAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221611521_AddedWaterSource.cs" />
+    <Compile Include="Migrations\201708221611521_AddedWaterSource.Designer.cs">
+      <DependentUpon>201708221611521_AddedWaterSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221623234_AddedBuildingDamageTypes.cs" />
+    <Compile Include="Migrations\201708221623234_AddedBuildingDamageTypes.Designer.cs">
+      <DependentUpon>201708221623234_AddedBuildingDamageTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251207020_AddedClassRoomDamage.cs" />
+    <Compile Include="Migrations\201708251207020_AddedClassRoomDamage.Designer.cs">
+      <DependentUpon>201708251207020_AddedClassRoomDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251229578_AddedMissing.cs" />
+    <Compile Include="Migrations\201708251229578_AddedMissing.Designer.cs">
+      <DependentUpon>201708251229578_AddedMissing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251257514_AddedBreakRoom1.cs" />
+    <Compile Include="Migrations\201708251257514_AddedBreakRoom1.Designer.cs">
+      <DependentUpon>201708251257514_AddedBreakRoom1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251330158_AddedFireStationDamage.cs" />
+    <Compile Include="Migrations\201708251330158_AddedFireStationDamage.Designer.cs">
+      <DependentUpon>201708251330158_AddedFireStationDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251414526_AddedHouseDamage.cs" />
+    <Compile Include="Migrations\201708251414526_AddedHouseDamage.Designer.cs">
+      <DependentUpon>201708251414526_AddedHouseDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251545238_AddedOfficeDamage.cs" />
+    <Compile Include="Migrations\201708251545238_AddedOfficeDamage.Designer.cs">
+      <DependentUpon>201708251545238_AddedOfficeDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251640084_AddedTelephoneRoomDamage.cs" />
+    <Compile Include="Migrations\201708251640084_AddedTelephoneRoomDamage.Designer.cs">
+      <DependentUpon>201708251640084_AddedTelephoneRoomDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BatteryChange.cs" />
+    <Compile Include="Models\BreakRoom.cs" />
+    <Compile Include="Models\BreakRoomDamage.cs" />
+    <Compile Include="Models\BreakRoomDamageStatus.cs" />
+    <Compile Include="Models\BreakRoomRepair.cs" />
+    <Compile Include="Models\BuildingDamageTypes.cs" />
+    <Compile Include="Models\Buildings.cs" />
+    <Compile Include="Models\ClassRoom.cs" />
+    <Compile Include="Models\ClassRoomDamage.cs" />
+    <Compile Include="Models\ClassRoomDamageStatus.cs" />
+    <Compile Include="Models\ClassRoomRepair.cs" />
+    <Compile Include="Models\Count.cs" />
+    <Compile Include="Models\CreateUserViewModel.cs" />
+    <Compile Include="Models\Damage.cs" />
+    <Compile Include="Models\DamageStatus.cs" />
+    <Compile Include="Models\DamageType.cs" />
+    <Compile Include="Models\DisplaNameAttribute.cs" />
+    <Compile Include="Models\District.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\FireExtinguishingEquipment.cs" />
+    <Compile Include="Models\FireExtinguishingEquipmentDamage.cs" />
+    <Compile Include="Models\FireExtinguishingEquipmentDamageStatus.cs" />
+    <Compile Include="Models\FireExtinguishingEquipmentDamageType.cs" />
+    <Compile Include="Models\FireExtinguishingEquipmentRepair.cs" />
+    <Compile Include="Models\FireExtinguishingEquipmentType.cs" />
+    <Compile Include="Models\FireStation.cs" />
+    <Compile Include="Models\FireStationDamage.cs" />
+    <Compile Include="Models\FireStationDamageStatus.cs" />
+    <Compile Include="Models\FireStationRepair.cs" />
+    <Compile Include="Models\FittnessCertificate.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Hobli.cs" />
+    <Compile Include="Models\House.cs" />
+    <Compile Include="Models\HouseDamage.cs" />
+    <Compile Include="Models\HouseDamageStatus.cs" />
+    <Compile Include="Models\HouseRepair.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageViewModel.cs" />
+    <Compile Include="Models\InsuranceRenewal.cs" />
+    <Compile Include="Models\Land.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Office.cs" />
+    <Compile Include="Models\OfficeDamage.cs" />
+    <Compile Include="Models\OfficeDamageStatus.cs" />
+    <Compile Include="Models\OfficeRepair.cs" />
+    <Compile Include="Models\OilChange.cs" />
+    <Compile Include="Models\OilType.cs" />
+    <Compile Include="Models\Range.cs" />
+    <Compile Include="Models\RangeDistrict.cs" />
+    <Compile Include="Models\Rank.cs" />
+    <Compile Include="Models\Repair.cs" />
+    <Compile Include="Models\RequiredLand.cs" />
+    <Compile Include="Models\ResidentialQuarter.cs" />
+    <Compile Include="Models\SelectRoleViewModel.cs" />
+    <Compile Include="Models\SelectTicketTypeViewModel.cs" />
+    <Compile Include="Models\Taluk.cs" />
+    <Compile Include="Models\TaxPayment.cs" />
+    <Compile Include="Models\TelephoneRoom.cs" />
+    <Compile Include="Models\TelephoneRoomDamage.cs" />
+    <Compile Include="Models\TelephoneRoomDamageStatus.cs" />
+    <Compile Include="Models\TelephoneRoomRepair.cs" />
+    <Compile Include="Models\TyreChange.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Vacancy.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleDamage.cs" />
+    <Compile Include="Models\VehicleDamageStatus.cs" />
+    <Compile Include="Models\VehicleDamageType.cs" />
+    <Compile Include="Models\VehicleEquipment.cs" />
+    <Compile Include="Models\VehicleEquipmentDamage.cs" />
+    <Compile Include="Models\VehicleEquipmentDamageStatus.cs" />
+    <Compile Include="Models\VehicleEquipmentDamageType.cs" />
+    <Compile Include="Models\VehicleEquipmentRepair.cs" />
+    <Compile Include="Models\VehicleEquipmentType.cs" />
+    <Compile Include="Models\VehicleRepair.cs" />
+    <Compile Include="Models\WaterSource.cs" />
+    <Compile Include="Models\WorksFor.cs" />
+    <Compile Include="Models\Zone.cs" />
+    <Compile Include="Models\ZoneRange.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Util\ChainOfCommandHelper.cs" />
+    <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\DataFilter.cs" />
+    <Compile Include="Util\FileHelper.cs" />
+    <Compile Include="Util\TicketHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Zones\Create.cshtml" />
+    <Content Include="Views\Zones\Delete.cshtml" />
+    <Content Include="Views\Zones\Details.cshtml" />
+    <Content Include="Views\Zones\Edit.cshtml" />
+    <Content Include="Views\Zones\Index.cshtml" />
+    <Content Include="Views\Ranges\Create.cshtml" />
+    <Content Include="Views\Ranges\Delete.cshtml" />
+    <Content Include="Views\Ranges\Details.cshtml" />
+    <Content Include="Views\Ranges\Edit.cshtml" />
+    <Content Include="Views\Ranges\Index.cshtml" />
+    <Content Include="Views\ZoneRanges\Create.cshtml" />
+    <Content Include="Views\ZoneRanges\Delete.cshtml" />
+    <Content Include="Views\ZoneRanges\Details.cshtml" />
+    <Content Include="Views\ZoneRanges\Edit.cshtml" />
+    <Content Include="Views\ZoneRanges\Index.cshtml" />
+    <Content Include="Views\Districts\Create.cshtml" />
+    <Content Include="Views\Districts\Delete.cshtml" />
+    <Content Include="Views\Districts\Details.cshtml" />
+    <Content Include="Views\Districts\Edit.cshtml" />
+    <Content Include="Views\Districts\Index.cshtml" />
+    <Content Include="Views\RangeDistricts\Create.cshtml" />
+    <Content Include="Views\RangeDistricts\Delete.cshtml" />
+    <Content Include="Views\RangeDistricts\Details.cshtml" />
+    <Content Include="Views\RangeDistricts\Edit.cshtml" />
+    <Content Include="Views\RangeDistricts\Index.cshtml" />
+    <Content Include="Views\Taluks\Create.cshtml" />
+    <Content Include="Views\Taluks\Delete.cshtml" />
+    <Content Include="Views\Taluks\Details.cshtml" />
+    <Content Include="Views\Taluks\Edit.cshtml" />
+    <Content Include="Views\Taluks\Index.cshtml" />
+    <Content Include="Views\Hoblis\Create.cshtml" />
+    <Content Include="Views\Hoblis\Delete.cshtml" />
+    <Content Include="Views\Hoblis\Details.cshtml" />
+    <Content Include="Views\Hoblis\Edit.cshtml" />
+    <Content Include="Views\Hoblis\Index.cshtml" />
+    <Content Include="Views\FireStations\Create.cshtml" />
+    <Content Include="Views\FireStations\Delete.cshtml" />
+    <Content Include="Views\FireStations\Details.cshtml" />
+    <Content Include="Views\FireStations\Edit.cshtml" />
+    <Content Include="Views\FireStations\Index.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Details.cshtml" />
+    <Content Include="Views\Vehicles\Edit.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\TyreChanges\Create.cshtml" />
+    <Content Include="Views\TyreChanges\Delete.cshtml" />
+    <Content Include="Views\TyreChanges\Details.cshtml" />
+    <Content Include="Views\TyreChanges\Edit.cshtml" />
+    <Content Include="Views\TyreChanges\Index.cshtml" />
+    <Content Include="Views\BatteryChanges\Create.cshtml" />
+    <Content Include="Views\BatteryChanges\Delete.cshtml" />
+    <Content Include="Views\BatteryChanges\Details.cshtml" />
+    <Content Include="Views\BatteryChanges\Edit.cshtml" />
+    <Content Include="Views\BatteryChanges\Index.cshtml" />
+    <Content Include="Views\OilTypes\Create.cshtml" />
+    <Content Include="Views\OilTypes\Delete.cshtml" />
+    <Content Include="Views\OilTypes\Details.cshtml" />
+    <Content Include="Views\OilTypes\Edit.cshtml" />
+    <Content Include="Views\OilTypes\Index.cshtml" />
+    <Content Include="Views\OilChanges\Create.cshtml" />
+    <Content Include="Views\OilChanges\Delete.cshtml" />
+    <Content Include="Views\OilChanges\Details.cshtml" />
+    <Content Include="Views\OilChanges\Edit.cshtml" />
+    <Content Include="Views\OilChanges\Index.cshtml" />
+    <Content Include="Views\InsuranceRenewals\Create.cshtml" />
+    <Content Include="Views\InsuranceRenewals\Delete.cshtml" />
+    <Content Include="Views\InsuranceRenewals\Details.cshtml" />
+    <Content Include="Views\InsuranceRenewals\Edit.cshtml" />
+    <Content Include="Views\InsuranceRenewals\Index.cshtml" />
+    <Content Include="Views\TaxPayments\Create.cshtml" />
+    <Content Include="Views\TaxPayments\Delete.cshtml" />
+    <Content Include="Views\TaxPayments\Details.cshtml" />
+    <Content Include="Views\TaxPayments\Edit.cshtml" />
+    <Content Include="Views\TaxPayments\Index.cshtml" />
+    <Content Include="Views\FittnessCertificates\Create.cshtml" />
+    <Content Include="Views\FittnessCertificates\Delete.cshtml" />
+    <Content Include="Views\FittnessCertificates\Details.cshtml" />
+    <Content Include="Views\FittnessCertificates\Edit.cshtml" />
+    <Content Include="Views\FittnessCertificates\Index.cshtml" />
+    <Content Include="Views\VehicleEquipmentTypes\Create.cshtml" />
+    <Content Include="Views\VehicleEquipmentTypes\Delete.cshtml" />
+    <Content Include="Views\VehicleEquipmentTypes\Details.cshtml" />
+    <Content Include="Views\VehicleEquipmentTypes\Edit.cshtml" />
+    <Content Include="Views\VehicleEquipmentTypes\Index.cshtml" />
+    <Content Include="Views\VehicleEquipments\Create.cshtml" />
+    <Content Include="Views\VehicleEquipments\Delete.cshtml" />
+    <Content Include="Views\VehicleEquipments\Details.cshtml" />
+    <Content Include="Views\VehicleEquipments\Edit.cshtml" />
+    <Content Include="Views\VehicleEquipments\Index.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentTypes\Create.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentTypes\Delete.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentTypes\Details.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentTypes\Edit.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentTypes\Index.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipments\Create.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipments\Delete.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipments\Details.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipments\Edit.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipments\Index.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
+    <Content Include="Views\BreakRooms\Create.cshtml" />
+    <Content Include="Views\BreakRooms\Delete.cshtml" />
+    <Content Include="Views\BreakRooms\Details.cshtml" />
+    <Content Include="Views\BreakRooms\Edit.cshtml" />
+    <Content Include="Views\BreakRooms\Index.cshtml" />
+    <Content Include="Views\ClassRooms\Create.cshtml" />
+    <Content Include="Views\ClassRooms\Delete.cshtml" />
+    <Content Include="Views\ClassRooms\Details.cshtml" />
+    <Content Include="Views\ClassRooms\Edit.cshtml" />
+    <Content Include="Views\ClassRooms\Index.cshtml" />
+    <Content Include="Views\TelephoneRooms\Create.cshtml" />
+    <Content Include="Views\TelephoneRooms\Delete.cshtml" />
+    <Content Include="Views\TelephoneRooms\Details.cshtml" />
+    <Content Include="Views\TelephoneRooms\Edit.cshtml" />
+    <Content Include="Views\TelephoneRooms\Index.cshtml" />
+    <Content Include="Views\ResidentialQuarters\Create.cshtml" />
+    <Content Include="Views\ResidentialQuarters\Delete.cshtml" />
+    <Content Include="Views\ResidentialQuarters\Details.cshtml" />
+    <Content Include="Views\ResidentialQuarters\Edit.cshtml" />
+    <Content Include="Views\ResidentialQuarters\Index.cshtml" />
+    <Content Include="Views\Houses\Create.cshtml" />
+    <Content Include="Views\Houses\Delete.cshtml" />
+    <Content Include="Views\Houses\Details.cshtml" />
+    <Content Include="Views\Houses\Edit.cshtml" />
+    <Content Include="Views\Houses\Index.cshtml" />
+    <Content Include="Views\Groups\Create.cshtml" />
+    <Content Include="Views\Groups\Delete.cshtml" />
+    <Content Include="Views\Groups\Details.cshtml" />
+    <Content Include="Views\Groups\Edit.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
+    <Content Include="Views\Ranks\Create.cshtml" />
+    <Content Include="Views\Ranks\Delete.cshtml" />
+    <Content Include="Views\Ranks\Details.cshtml" />
+    <Content Include="Views\Ranks\Edit.cshtml" />
+    <Content Include="Views\Ranks\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\WorksFors\Create.cshtml" />
+    <Content Include="Views\WorksFors\Delete.cshtml" />
+    <Content Include="Views\WorksFors\Details.cshtml" />
+    <Content Include="Views\WorksFors\Edit.cshtml" />
+    <Content Include="Views\WorksFors\Index.cshtml" />
+    <Content Include="Views\Vacancies\Create.cshtml" />
+    <Content Include="Views\Vacancies\Delete.cshtml" />
+    <Content Include="Views\Vacancies\Details.cshtml" />
+    <Content Include="Views\Vacancies\Edit.cshtml" />
+    <Content Include="Views\Vacancies\Index.cshtml" />
+    <Content Include="Views\Counts\Create.cshtml" />
+    <Content Include="Views\Counts\Delete.cshtml" />
+    <Content Include="Views\Counts\Details.cshtml" />
+    <Content Include="Views\Counts\Edit.cshtml" />
+    <Content Include="Views\Counts\Index.cshtml" />
+    <Content Include="Views\Users\SelectRole.cshtml" />
+    <Content Include="Views\Users\CreateUser.cshtml" />
+    <Content Include="Views\Home\CfoHome.cshtml" />
+    <Content Include="Views\Home\DfoHome.cshtml" />
+    <Content Include="Views\Home\RfoHome.cshtml" />
+    <Content Include="Views\Home\ZfoHome.cshtml" />
+    <Content Include="Views\Home\AdminHome.cshtml" />
+    <Content Include="Views\Home\IgHome.cshtml" />
+    <Content Include="Views\Lands\Create.cshtml" />
+    <Content Include="Views\Lands\Delete.cshtml" />
+    <Content Include="Views\Lands\Details.cshtml" />
+    <Content Include="Views\Lands\Edit.cshtml" />
+    <Content Include="Views\Lands\Index.cshtml" />
+    <Content Include="Views\RequiredLands\Create.cshtml" />
+    <Content Include="Views\RequiredLands\Delete.cshtml" />
+    <Content Include="Views\RequiredLands\Details.cshtml" />
+    <Content Include="Views\RequiredLands\Edit.cshtml" />
+    <Content Include="Views\RequiredLands\Index.cshtml" />
+    <Content Include="Views\VehicleDamageTypes\Create.cshtml" />
+    <Content Include="Views\VehicleDamageTypes\Delete.cshtml" />
+    <Content Include="Views\VehicleDamageTypes\Details.cshtml" />
+    <Content Include="Views\VehicleDamageTypes\Edit.cshtml" />
+    <Content Include="Views\VehicleDamageTypes\Index.cshtml" />
+    <Content Include="Views\VehicleDamage\ReportDamage.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewOpenVehicleDamages.cshtml" />
+    <Content Include="Views\VehicleDamage\ActOnDamage.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewTickets.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewTicket.cshtml" />
+    <Content Include="Views\VehicleDamage\CloseTicket.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewClosedTickets.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewClosedTicket.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewDamage.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewVehicleDamage.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewFileMovement.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewVehicle.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewPreviousDamages.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewRepair.cshtml" />
+    <Content Include="Views\VehicleDamage\ViewOpenTickets.cshtml" />
+    <Content Include="Views\Tickets\ViewOpenTickets.cshtml" />
+    <Content Include="Views\Tickets\ViewClosedTickets.cshtml" />
+    <Content Include="Views\Tickets\ViewFileMovement.cshtml" />
+    <Content Include="Views\Tickets\ViewPreviousDamages.cshtml" />
+    <Content Include="Views\Tickets\ViewTicket.cshtml" />
+    <Content Include="Views\Tickets\_vehicle.cshtml" />
+    <Content Include="Views\Tickets\ViewDamage.cshtml" />
+    <Content Include="Views\Tickets\SelectTicketType.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForVehicle.cshtml" />
+    <Content Include="Views\Tickets\_vehicleApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_vehicleCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\ViewRepair.cshtml" />
+    <Content Include="Views\VehicleEquipmentDamageTypes\Create.cshtml" />
+    <Content Include="Views\VehicleEquipmentDamageTypes\Delete.cshtml" />
+    <Content Include="Views\VehicleEquipmentDamageTypes\Details.cshtml" />
+    <Content Include="Views\VehicleEquipmentDamageTypes\Edit.cshtml" />
+    <Content Include="Views\VehicleEquipmentDamageTypes\Index.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForVehicleEquipment.cshtml" />
+    <Content Include="Views\Tickets\_vehicleEquipment.cshtml" />
+    <Content Include="Views\Tickets\_vehicleEquipmentApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_vehicleEquipmentCloseTicket.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentDamageTypes\Create.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentDamageTypes\Delete.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentDamageTypes\Details.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentDamageTypes\Edit.cshtml" />
+    <Content Include="Views\FireExtinguishingEquipmentDamageTypes\Index.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForFireExtinguishingEquipment.cshtml" />
+    <Content Include="Views\Tickets\_fireExtinguishingEquipment.cshtml" />
+    <Content Include="Views\Tickets\_fireExtinguishingEquipmentApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_fireExtinguishingEquipmentCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\_vehicleDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_vehicleEquipmentDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_fireExtinguishingEquipmentDamageHistory.cshtml" />
+    <Content Include="Views\WaterSources\Create.cshtml" />
+    <Content Include="Views\WaterSources\Delete.cshtml" />
+    <Content Include="Views\WaterSources\Details.cshtml" />
+    <Content Include="Views\WaterSources\Edit.cshtml" />
+    <Content Include="Views\WaterSources\Index.cshtml" />
+    <Content Include="Views\BuildingDamageTypes\Create.cshtml" />
+    <Content Include="Views\BuildingDamageTypes\Delete.cshtml" />
+    <Content Include="Views\BuildingDamageTypes\Details.cshtml" />
+    <Content Include="Views\BuildingDamageTypes\Edit.cshtml" />
+    <Content Include="Views\BuildingDamageTypes\Index.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForClassRoom.cshtml" />
+    <Content Include="Views\Tickets\_classRoomDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_classRoom.cshtml" />
+    <Content Include="Views\Tickets\_classRoomApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_classRoomCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForBreakRoom.cshtml" />
+    <Content Include="Views\Tickets\_breakRoomDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_breakRoom.cshtml" />
+    <Content Include="Views\Tickets\_breakRoomApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_breakRoomCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForFireStation.cshtml" />
+    <Content Include="Views\Tickets\_fireStationDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_fireStation.cshtml" />
+    <Content Include="Views\Tickets\_fireStationApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_fireStationCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForHouse.cshtml" />
+    <Content Include="Views\Tickets\_houseDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_house.cshtml" />
+    <Content Include="Views\Tickets\_houseApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_houseCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForOffice.cshtml" />
+    <Content Include="Views\Tickets\_office.cshtml" />
+    <Content Include="Views\Tickets\_officeApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_officeCloseTicket.cshtml" />
+    <Content Include="Views\Tickets\_officeDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\OpenTicketForTelephoneRoom.cshtml" />
+    <Content Include="Views\Tickets\_telephoneRoomDamageHistory.cshtml" />
+    <Content Include="Views\Tickets\_telephoneRoom.cshtml" />
+    <Content Include="Views\Tickets\_telephoneRoomApproveDisapproveElevateTicket.cshtml" />
+    <Content Include="Views\Tickets\_telephoneRoomCloseTicket.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Dashboard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708201215027_AddedZoneRange.resx">
+      <DependentUpon>201708201215027_AddedZoneRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201223293_AddedDistrict.resx">
+      <DependentUpon>201708201223293_AddedDistrict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201229484_AddedTaluk.resx">
+      <DependentUpon>201708201229484_AddedTaluk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201233265_AddedHobli.resx">
+      <DependentUpon>201708201233265_AddedHobli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201247188_AddedFireStation.resx">
+      <DependentUpon>201708201247188_AddedFireStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201253222_AddedFireStation1.resx">
+      <DependentUpon>201708201253222_AddedFireStation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201301475_AddedFireStation2.resx">
+      <DependentUpon>201708201301475_AddedFireStation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201311525_AddedFireStation3.resx">
+      <DependentUpon>201708201311525_AddedFireStation3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201318298_AddedFireStation4.resx">
+      <DependentUpon>201708201318298_AddedFireStation4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201327294_AddedVehicle.resx">
+      <DependentUpon>201708201327294_AddedVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201334152_AddedTyreChange.resx">
+      <DependentUpon>201708201334152_AddedTyreChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201338038_AddedBatteryChange.resx">
+      <DependentUpon>201708201338038_AddedBatteryChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201340119_AddedMissingProperties.resx">
+      <DependentUpon>201708201340119_AddedMissingProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201351010_AddedOilChanges.resx">
+      <DependentUpon>201708201351010_AddedOilChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201355377_AddedOilChanges1.resx">
+      <DependentUpon>201708201355377_AddedOilChanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201357118_AddedOilChanges11.resx">
+      <DependentUpon>201708201357118_AddedOilChanges11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201359315_Juggad.resx">
+      <DependentUpon>201708201359315_Juggad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201402538_AddedOilChanges2.resx">
+      <DependentUpon>201708201402538_AddedOilChanges2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201406542_AddedInsuranceRenewals.resx">
+      <DependentUpon>201708201406542_AddedInsuranceRenewals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201411578_AddedTaxPayment.resx">
+      <DependentUpon>201708201411578_AddedTaxPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201415299_AddedFC.resx">
+      <DependentUpon>201708201415299_AddedFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201424330_AddedVehicleEquipment.resx">
+      <DependentUpon>201708201424330_AddedVehicleEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201432319_AddedFireExtinguishingEquipment.resx">
+      <DependentUpon>201708201432319_AddedFireExtinguishingEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201452310_AddedOffice.resx">
+      <DependentUpon>201708201452310_AddedOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201455284_AddedBreakRoom.resx">
+      <DependentUpon>201708201455284_AddedBreakRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201458402_AddedClassRom.resx">
+      <DependentUpon>201708201458402_AddedClassRom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201501122_AddedTelephoneRoom.resx">
+      <DependentUpon>201708201501122_AddedTelephoneRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201504116_AddedResidentialQuarter.resx">
+      <DependentUpon>201708201504116_AddedResidentialQuarter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201508458_AddedHouse.resx">
+      <DependentUpon>201708201508458_AddedHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201529347_AddedGroups.resx">
+      <DependentUpon>201708201529347_AddedGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201533040_AddedRanks.resx">
+      <DependentUpon>201708201533040_AddedRanks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201537238_AddedEmployee.resx">
+      <DependentUpon>201708201537238_AddedEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201538467_AddedEmployee1.resx">
+      <DependentUpon>201708201538467_AddedEmployee1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201543370_AddedWorksFors.resx">
+      <DependentUpon>201708201543370_AddedWorksFors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201548239_AddedVancancies.resx">
+      <DependentUpon>201708201548239_AddedVancancies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201552340_AddedCount.resx">
+      <DependentUpon>201708201552340_AddedCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708210337142_AddedUsers.resx">
+      <DependentUpon>201708210337142_AddedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708210554439_DbUpdate.resx">
+      <DependentUpon>201708210554439_DbUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708210906017_AddedImageToVehicle.resx">
+      <DependentUpon>201708210906017_AddedImageToVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211134007_AddedLand.resx">
+      <DependentUpon>201708211134007_AddedLand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211146041_AddedRequiredLand.resx">
+      <DependentUpon>201708211146041_AddedRequiredLand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211204161_AddedVehicleDamage.resx">
+      <DependentUpon>201708211204161_AddedVehicleDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211212590_AddedVehicleDamageStatus.resx">
+      <DependentUpon>201708211212590_AddedVehicleDamageStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211254448_MadeDateTimeNullable.resx">
+      <DependentUpon>201708211254448_MadeDateTimeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211349485_AddedCaseId.resx">
+      <DependentUpon>201708211349485_AddedCaseId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211446164_AddedVehicleReapir.resx">
+      <DependentUpon>201708211446164_AddedVehicleReapir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220317087_AddedSTI.resx">
+      <DependentUpon>201708220317087_AddedSTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220354309_AddedMoreSTI.resx">
+      <DependentUpon>201708220354309_AddedMoreSTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220737353_AddedFK.resx">
+      <DependentUpon>201708220737353_AddedFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220919453_EvenMoreSTI.resx">
+      <DependentUpon>201708220919453_EvenMoreSTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220939107_AddedMissingFields.resx">
+      <DependentUpon>201708220939107_AddedMissingFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220940598_RemovedUnnecessaryFields.resx">
+      <DependentUpon>201708220940598_RemovedUnnecessaryFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221107403_AddedFK1.resx">
+      <DependentUpon>201708221107403_AddedFK1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221137405_AddedMoreSTL.resx">
+      <DependentUpon>201708221137405_AddedMoreSTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221228313_STLSTL.resx">
+      <DependentUpon>201708221228313_STLSTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221249468_MovedProperties.resx">
+      <DependentUpon>201708221249468_MovedProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221356174_AddedAttributes.resx">
+      <DependentUpon>201708221356174_AddedAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221611521_AddedWaterSource.resx">
+      <DependentUpon>201708221611521_AddedWaterSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221623234_AddedBuildingDamageTypes.resx">
+      <DependentUpon>201708221623234_AddedBuildingDamageTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251207020_AddedClassRoomDamage.resx">
+      <DependentUpon>201708251207020_AddedClassRoomDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251229578_AddedMissing.resx">
+      <DependentUpon>201708251229578_AddedMissing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251257514_AddedBreakRoom1.resx">
+      <DependentUpon>201708251257514_AddedBreakRoom1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251330158_AddedFireStationDamage.resx">
+      <DependentUpon>201708251330158_AddedFireStationDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251414526_AddedHouseDamage.resx">
+      <DependentUpon>201708251414526_AddedHouseDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251545238_AddedOfficeDamage.resx">
+      <DependentUpon>201708251545238_AddedOfficeDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251640084_AddedTelephoneRoomDamage.resx">
+      <DependentUpon>201708251640084_AddedTelephoneRoomDamage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50611</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50611/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.11.2\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.11.2\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.11.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.11.2\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.11.2\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

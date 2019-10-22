@@ -1,0 +1,94 @@
+﻿@model Ignis.Models.Land
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Land</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GovernmentSactionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GovernmentSactionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEncroached)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEncroached)
+        </dd>
+
+    </dl>
+</div>
+
+@if (TempData.Keys.Contains("Images"))
+{
+    <div class="row">
+        @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["Images"])
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Content(Ignis.Util.Constants.LANDS_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                        <img src="@Url.Content(Ignis.Util.Constants.LANDS_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                        <div class="caption">
+                            <p>@image.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

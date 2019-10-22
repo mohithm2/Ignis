@@ -1,0 +1,52 @@
+﻿@model Ignis.Models.ClassRoom
+
+<div>
+    <h4>ClassRoom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FireStation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireStation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    @if (TempData.Keys.Contains("FireExtinguishingEquipmentImages"))
+    {
+        <div class="row">
+            @foreach (Ignis.Models.ImageViewModel image in (List<Ignis.Models.ImageViewModel>)TempData["FireExtinguishingEquipmentImages"])
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="@Url.Content(Ignis.Util.Constants.CLASS_ROOM_UPLOAD_BASE_PATH + image.FilePath)" target="_blank">
+                            <img src="@Url.Content(Ignis.Util.Constants.CLASS_ROOM_UPLOAD_BASE_PATH + image.FilePath)" alt="" style="width:100%" />
+                            <div class="caption">
+                                <p>@image.Description</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

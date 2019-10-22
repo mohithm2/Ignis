@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Ignis.Models.FireExtinguishingEquipmentDamage>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateNoticed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostEstimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FireExtinguishingEquipmentDamageType.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateNoticed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Report)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostEstimate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FireExtinguishingEquipmentDamageType.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "ViewTicket", new { id = item.FireExtinguishingEquipmentStatuses.OrderBy(x => x.DateOfArrival).First().Id })
+        </td>
+    </tr>
+}
+
+</table>

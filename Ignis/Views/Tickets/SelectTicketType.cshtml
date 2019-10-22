@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "SelectTicketType";
+}
+
+<h2>Select Ticket Type</h2>
+
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle", "OpenTicketForVehicle", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle Equipment", "OpenTicketForVehicleEquipment", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Extingushing Equipment", "OpenTicketForFireExtinguishingEquipment", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Class Room", "OpenTicketForClassRoom", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Break Room", "OpenTicketForBreakRoom", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Station", "OpenTicketForFireStation", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("House", "OpenTicketForHouse", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Office", "OpenTicketForOffice", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Telephone Room", "OpenTicketForTelephoneRoom", "Tickets", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>

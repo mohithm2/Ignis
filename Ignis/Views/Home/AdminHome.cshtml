@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "AdminHome";
+}
+
+<div class="jumbotron">
+    <h1>Welcome, @User.Identity.Name</h1>
+    <p class="lead">Dashboard</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Zone", "Index", "Zones", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Range", "Index", "Ranges", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Zone Range", "Index", "ZoneRanges", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("District", "Index", "Districts", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Range District", "Index", "RangeDistricts", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Taluk", "Index", "Taluks", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Hobli", "Index", "Hoblis", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Station", "Index", "FireStations", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicles", "Index", "Vehicles", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Office", "Index", "Offices", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Class Room", "Index", "ClassRooms", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Break Room", "Index", "BreakRooms", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Telephone Room", "Index", "TelephoneRooms", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Residential Quarter", "Index", "ResidentialQuarters", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("House", "Index", "Houses", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Oil Types", "Index", "OilTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Oil Change", "Index", "OilChanges", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Insurance Renewal", "Index", "InsuranceRenewals", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Tax Payments", "Index", "TaxPayments", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fittness Certificate", "Index", "FittnessCertificates", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle Equipment Types", "Index", "VehicleEquipmentTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Extinguishing Equipment Types", "Index", "FireExtinguishingEquipmentTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle Equipment", "Index", "VehicleEquipments", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Groups", "Index", "Groups", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Ranks", "Index", "Ranks", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Employee", "Index", "Employees", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Work Relation", "Index", "WorksFors", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Vacancy", "Index", "Vacancies", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Employee", "Index", "Employees", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Count", "Index", "Counts", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("User", "SelectRole", "Users", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Extinguishing Equipment", "Index", "FireExtinguishingEquipments", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Battery Changes", "Index", "BatteryChanges", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Tyre Changes", "Index", "TyreChanges", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Land", "Index", "Lands", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Required Land", "Index", "RequiredLands", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle Damage Type", "Index", "VehicleDamageTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Vehicle Equipment Damage Type", "Index", "VehicleEquipmentDamageTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Fire Extinguishing Equipment Damage Types", "Index", "FireExtinguishingEquipmentDamageTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Water Source", "Index", "WaterSources", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Building Damage Types", "Index", "BuildingDamageTypes", null, new { @class = "btn btn-primary btn-block btn-lg" })
+    </div>
+    <div class="col-md-4">
+        
+    </div>
+</div>
+<div class="row">
+    <hr />
+</div>
